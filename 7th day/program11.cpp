@@ -1,35 +1,70 @@
-#include<iostream>
-#include<string>
+#include <iostream>
+#include <string>
 using namespace std;
 
-class Vehical
+class Vehicle
 {
-private:
-    string model;
-    int year;
+    private:
+        string model;
+        int year;
+        string owner;
 
-public:
-    Vehical(string m, int y)
-    {
-        model = m;
-        year = y;
-    }
-    void show()
-    {
-        cout <<"Model: "<< model <<", Year: "<< year << endl;
-    }
+    public:
+        Vehicle(string m,int y,string o)
+        {
+            model=m;
+            year=y;
+            owner=o;
+        }
+
+        void show()
+        {
+            cout << "Model: " << model
+                 << " Year: " << year
+                 << " Owner: " << owner << endl;
+        }
 };
 
-int main()
-{
-    Vehical *v1 = new Vehical("Toyota Camry",2022);
-    Vehical *v2 = new Vehical("Tesla Model 3",2023);
+int main(){
+    int n;
+    cout << "Enter number of vehicles rented today: ";
+    cin >> n;
 
-    v1->show();
-    v2->show();
+    Vehicle **fleet=new Vehicle *[n];
 
-    delete v1;
-    delete v2;
+    for (int i=0;i<n;i++)
+    {
+        string model ,owner;
+        int year;
 
-    return 0;
+        cout << "\nenter details for vehicle " << (i+1) << ":\n";
+        cout << "Model: ";
+        cin.ignore();
+        getline(cin, model);
+
+        cout << " Year: ";
+        cin >> year;
+        cin.ignore();
+
+        cout << " Owner: ";
+        getline(cin, owner);
+
+        fleet[i]=new Vehicle(model , year , owner );
+
+}
+
+cout << "\n===== Rented vehicles list =====\n ";
+for (int i=0 ; i<n ; i++){
+    fleet[i]->show();
+}
+
+for (int i=0; i<n ; i++){
+    delete fleet[i];
+
+}
+
+delete[] fleet;
+
+return 0;
+
 }
