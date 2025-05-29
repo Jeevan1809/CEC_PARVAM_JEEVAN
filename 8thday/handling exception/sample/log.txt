@@ -1,0 +1,5 @@
+[Thu May 29 16:31:17 2025] User 1 checked balance.
+[Thu May 29 16:31:34 2025] User 1 deposited $1000.000000
+[Thu May 29 16:31:44 2025] User 1 checked balance.
+[Thu May 29 16:32:20 2025] User 2 withdrew $800.000000
+[Thu May 29 16:32:29 2025] User 2 checked balance.
