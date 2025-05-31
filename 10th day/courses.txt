@@ -1,0 +1,5 @@
+1,Computer Science
+2,Mechanical Engineering
+3,Electrical Engineering
+4,B.Sc Mathematics
+5,B.A English
